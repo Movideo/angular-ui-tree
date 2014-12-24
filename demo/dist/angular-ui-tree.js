@@ -541,6 +541,9 @@
             val = val.toLowerCase();
             if (val.length > 0) {
               $scope.copyKey = (angular.isDefined(keys[val])) ? keys[val] : (val.charCodeAt(0) - 32);
+            } else {
+              // Empty string triggers default copy behaviour
+              $scope.copy = true;
             }
           }
         });
