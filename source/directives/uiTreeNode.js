@@ -724,12 +724,14 @@
 
                               var target = targetNode;
                               if (!target.$childNodesScope){
-                                while (typeof(target.$childNodesScope) === "undefined"){
+                                while (target && typeof(target.$childNodesScope) === "undefined"){
                                   target = target.$parent;
                                 }
                               }
 
-                              selectedElementScope.moved = selectedElementScope.$dragInfo.moveTo(target.$childNodesScope, target.childNodes(), index);
+                              if (target) {
+                                selectedElementScope.moved = selectedElementScope.$dragInfo.moveTo(target.$childNodesScope, target.childNodes(), index);
+                              }
                             });
                           }
                         }
