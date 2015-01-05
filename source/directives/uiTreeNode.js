@@ -745,9 +745,7 @@
                                                       : (targetElmOffset.top + targetElmOffset.height - childsHeight - ((targetElmOffset.height - childsHeight) * scope.$treeScope.coverage));
 
                       if (elmVertUp <= upLimit) {
-                        if (targetNode.accept(scope, targetNode.index())) {
-                          targetElm[0].parentNode.insertBefore(placeElm[0], targetElm[0]);
-                        }
+                        targetElm[0].parentNode.insertBefore(placeElm[0], targetElm[0]);
 
                         angular.forEach(scope.$treeScope.$selecteds, function(selectedElement, index) {
                           var selectedElementScope = angular.element(selectedElement).scope();
