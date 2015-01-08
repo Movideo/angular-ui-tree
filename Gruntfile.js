@@ -17,6 +17,7 @@ module.exports = function(grunt) {
   // project configuration
   grunt.initConfig({
     cfg: cfg,
+    pkg: grunt.file.readJSON('package.json'),
 
     // watch
     watch: {
@@ -91,6 +92,13 @@ module.exports = function(grunt) {
 
     // concat
     concat: {
+      options: {
+        process: {
+            data: {
+                version: '<%= pkg.version %>'
+            }
+        }
+      },
       build: {
         src: [
           '<%= cfg.srcDir %>/main.js',
