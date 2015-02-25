@@ -303,8 +303,8 @@
 
                     $document.find('body').append(dragElm);
                     dragElm.css({
-                      left: firstElementOffset.left + 'px',
-                      top: firstElementOffset.top + 'px'
+                      left: e.pageX + 'px',
+                      top: e.pageY + 'px'
                     });
                     elements = {
                       placeholder: placeElm,
@@ -442,8 +442,8 @@
                 }
 
                 dragElm.css({
-                  'left': elmPos.left + 'px',
-                  'top': elmPos.top + 'px'
+                  'left': e.pageX + 'px',
+                  'top': e.pageY + 'px'
                 });
 
                 var topScroll = window.pageYOffset || $window.document.documentElement.scrollTop;
