@@ -1,5 +1,5 @@
 /**
- * @license Angular UI Tree v2.2.2
+ * @license Angular UI Tree v2.2.5
  * (c) 2010-2014. https://github.com/JimLiu/angular-ui-tree
  * License: MIT
  */
@@ -1130,7 +1130,7 @@
             scope.init(controllersArr);
 
             scope.collapsed = !!$uiTreeHelper.getNodeAttribute(scope, 'collapsed');
-            scope.$watch(attrs.collapsed, function(val) {
+            attrs.$observe('collapsed', function(val) {
               if ((typeof val) === "boolean") {
                 scope.collapsed = val;
               }
@@ -1141,7 +1141,7 @@
             });
 
             scope.selected = !!$uiTreeHelper.getNodeAttribute(scope, 'selected');
-            scope.$watch(attrs.selected, function(val) {
+            attrs.$observe('selected', function(val) {
               if ((typeof val) === "boolean") {
                 scope.selected = val;
               }
@@ -1151,7 +1151,7 @@
               attrs.$set('selected', val);
             });
 
-            scope.$watch(attrs.expandOnHover, function(val) {
+            attrs.$observe('expandOnHover', function(val) {
               scope.expandOnHover = val;
             });
 
